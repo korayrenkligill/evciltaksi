@@ -1,5 +1,5 @@
 import { motion, easeOut } from "framer-motion";
-import { Phone, Mail, Headset } from "lucide-react";
+import { Phone, Mail, Headset, PhoneCall } from "lucide-react";
 
 // Not: Header sende. Bu bileşeni <Header /> altına koy.
 const fadeUp = (delay = 0) => ({
@@ -40,7 +40,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="relative bg-gradient-to-b from-slate-50 via-white to-sky-50 text-slate-900">
+    <main className="relative bg-gradient-to-b from-zinc-800 via-zinc-900 to-zinc-800 text-slate-900">
       {/* Subtle grain */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -56,21 +56,21 @@ export default function ContactPage() {
           <div>
             <motion.span
               {...fadeUp(0)}
-              className="inline-flex items-center gap-2 bg-sky-50 border border-sky-100 text-sky-700 px-3 py-1 rounded-full text-xs tracking-wide shadow-[0_0_30px_rgba(56,189,248,0.15)]"
+              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-yellow-400 px-3 py-1 rounded-full text-xs tracking-wide shadow-lg shadow-amber-400/20"
             >
               <Headset className="w-4 h-4" /> İletişim
             </motion.span>
 
             <motion.h1
               {...fadeUp(0.05)}
-              className="mt-4 text-3xl md:text-4xl font-extrabold tracking-[-0.01em]"
+              className="mt-4 text-3xl md:text-4xl font-extrabold text-yellow-500"
             >
               Doğrudan ekibimize bağlanın.
             </motion.h1>
 
             <motion.p
               {...fadeUp(0.1)}
-              className="mt-4 text-slate-700 text-lg leading-relaxed"
+              className="mt-4 text-white/70 text-lg leading-relaxed"
             >
               Form yok, bekleme yok. Aşağıdaki yetkililerle doğrudan görüşebilir
               veya şirket e-postasına tek tıkla mail atabilirsiniz.
@@ -80,7 +80,7 @@ export default function ContactPage() {
               {["7/24 operasyon desteği", "Teklif & fiyatlandırma"].map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700"
+                  className="rounded-full border border-yellow-500/40 bg-yellow-500/20 px-3 py-1.5 text-sm text-yellow-300"
                 >
                   {t}
                 </span>
@@ -88,14 +88,11 @@ export default function ContactPage() {
             </motion.div>
           </div>
 
-          <motion.div
-            {...fadeUp(0.1)}
-            className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-md"
-          >
+          <motion.div {...fadeUp(0.1)} className="relative overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/contact-dog.png"
               alt="Destek ekibi"
-              className="w-full h-auto object-cover max-h-[360px]"
+              className="w-full h-auto object-contain max-h-[360px]"
               loading="lazy"
             />
           </motion.div>
@@ -106,87 +103,32 @@ export default function ContactPage() {
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <motion.div
           {...fadeUp(0)}
-          className="rounded-2xl border border-slate-200 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60 p-6 md:p-8 shadow-sm"
+          className="rounded-2xl border border-yellow-200 backdrop-blur supports-[backdrop-filter]:bg-yellow-200/20 p-6 md:p-8 shadow-sm"
         >
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <div className="text-sm text-slate-600">Şirket e-postası</div>
-              <div className="mt-1 text-xl md:text-2xl font-extrabold tracking-tight">
+              <div className="text-sm text-slate-200">Şirket telefonu</div>
+              <div className="mt-1 text-xl md:text-2xl font-extrabold tracking-tight text-white">
                 {companyEmail}
               </div>
-              <p className="mt-2 text-slate-600">
+              <p className="mt-2 text-slate-100">
                 Tüm yazışmalar için tek adres — ilgili ekip yönlendirmesi
                 tarafımızdan yapılır.
               </p>
             </div>
             <div className="flex gap-3">
               <a
-                href={`mailto:${companyEmail}`}
-                className="group bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 border border-sky-500/20 shadow-md"
+                href={`tel:${companyEmail}`}
+                className="group bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 shadow-md"
               >
                 <span className="inline-flex items-center gap-2">
-                  Mail Gönder
-                  <Mail className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Ara
+                  <PhoneCall className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </a>
             </div>
           </div>
         </motion.div>
-      </section>
-
-      {/* ====== Sorumlular (2 kişi) ====== */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
-        <motion.h2 {...fadeUp(0)} className="text-2xl md:text-3xl font-bold">
-          Doğrudan İletişim
-        </motion.h2>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {contacts.map((c, i) => (
-            <motion.div
-              key={c.name}
-              {...card}
-              transition={{ ...card.transition, delay: 0.05 * i }}
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-            >
-              <div className="flex items-start gap-4">
-                <img
-                  src={c.avatar}
-                  alt={c.name}
-                  className="w-16 h-16 rounded-xl object-cover border border-slate-200"
-                  loading="lazy"
-                />
-                <div className="flex-1">
-                  <div className="text-lg font-semibold text-slate-900">
-                    {c.name}
-                  </div>
-                  <div className="text-sm text-slate-600">{c.role}</div>
-                  {/* <ul className="mt-3 space-y-1 text-sm text-slate-600">
-                    {c.highlights.map((h) => (
-                      <li key={h} className="flex items-start gap-2">
-                        <ChevronRight className="mt-0.5 w-4 h-4 text-sky-600" />{" "}
-                        {h}
-                      </li>
-                    ))}
-                  </ul> */}
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <a
-                      href={`tel:${c.phone.replace(/\s/g, "")}`}
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50"
-                    >
-                      <Phone className="w-4 h-4" /> {c.phone}
-                    </a>
-                    <a
-                      href={`mailto:${c.email}`}
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50"
-                    >
-                      <Mail className="w-4 h-4" /> {c.email}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </section>
     </main>
   );

@@ -16,10 +16,10 @@ const Header = (props: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const backgroundSlides = [
-    "https://images.pexels.com/photos/93398/pexels-photo-93398.jpeg",
-    "https://images.pexels.com/photos/13682891/pexels-photo-13682891.jpeg",
-    "https://images.pexels.com/photos/11053643/pexels-photo-11053643.jpeg",
-    "https://images.pexels.com/photos/11053640/pexels-photo-11053640.jpeg",
+    "https://images.pexels.com/photos/34026965/pexels-photo-34026965.jpeg",
+    "https://images.pexels.com/photos/4608852/pexels-photo-4608852.jpeg",
+    "https://images.pexels.com/photos/29933302/pexels-photo-29933302.jpeg",
+    "https://images.pexels.com/photos/12969006/pexels-photo-12969006.jpeg",
   ];
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const Header = (props: Props) => {
           }}
         />
       </AnimatePresence>
-      <div className="absolute bg-gradient-to-b bg-white/60 via-white/0 to-slate-50 z-10 w-full h-full" />
+      <div className="absolute bg-gradient-to-b bg-zinc-800/40 via-zinc-800/0 to-zinc-800 z-10 w-full h-full" />
 
       {/* Main Content */}
       <div
@@ -70,9 +70,9 @@ const Header = (props: Props) => {
               className="mb-8"
             >
               {props.badgeText && (
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1 rounded-full border border-white/20 mb-4 shadow-[0_0_30px_rgba(56,189,248,0.15)]">
-                  <Target className="w-5 h-5 text-blue-500" />
-                  <span className="text-zinc-950/90 font-medium text-sm tracking-wide">
+                <div className="inline-flex items-center gap-2 bg-white-800/10 backdrop-blur-md px-4 py-1 rounded-full border border-white/20 mb-4 shadow-[0_0_30px_rgba(56,189,248,0.15)]">
+                  <Target className="w-5 h-5 text-yellow-500" />
+                  <span className="text-white/90 font-medium text-sm tracking-wide">
                     {props.badgeText}
                   </span>
                 </div>
@@ -91,7 +91,7 @@ const Header = (props: Props) => {
                         ease: "easeOut",
                         delay: 0.12,
                       }}
-                      className="bg-gradient-to-r from-zinc-950/90 to-zinc-950/70 bg-clip-text text-transparent"
+                      className="bg-gradient-to-r from-white/90 to-white/70 bg-clip-text text-transparent"
                     >
                       {props.subtitle}
                     </motion.span>
@@ -105,7 +105,7 @@ const Header = (props: Props) => {
                 initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
-                className="text-lg sm:text-2xl text-zinc-950/85 max-w-4xl mx-auto mb-10 leading-relaxed font-light"
+                className="text-lg sm:text-2xl text-white/85 max-w-4xl mx-auto mb-10 leading-relaxed font-light"
               >
                 {props.description}
               </motion.p>
@@ -127,10 +127,10 @@ const Header = (props: Props) => {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`relative h-2 rounded-full transition-all duration-500 overflow-hidden ${
+                    className={`relative h-2 rounded-full transition-all duration-500 overflow-hidden cursor-pointer ${
                       index === currentSlide
-                        ? "w-8 bg-blue-700"
-                        : "w-2 bg-zinc-950 hover:bg-white/50"
+                        ? "w-8 bg-yellow-700"
+                        : "w-2 bg-white hover:bg-zinc-300/50"
                     }`}
                     aria-label={`Slide ${index + 1}`}
                   >
@@ -139,7 +139,7 @@ const Header = (props: Props) => {
                         initial={{ width: 0 }}
                         animate={{ width: "100%" }}
                         transition={{ duration: 7, ease: "linear" }}
-                        className="absolute inset-0 bg-gradient-to-r from-white/30 to-white/50"
+                        className="absolute inset-0 bg-gradient-to-r from-zinc-700/30 to-zinc-700/50"
                       />
                     )}
                   </button>

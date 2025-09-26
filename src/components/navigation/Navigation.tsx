@@ -55,55 +55,11 @@ interface NavbarLinkType {
 
 const navigations: NavbarLinkType[] = [
   {
-    name: "Lojistik",
-    path: "/lojistik",
-    type: "dropdown",
-    children: [
-      {
-        name: "Parsiyel Taşımacılık",
-        description: "Parça yüklerin ekonomik ve güvenli taşınması.",
-        path: "/parsiyel-tasimacilik",
-        icon: <Package size={30} className="text-blue-500" />,
-        iconBackground: "bg-blue-500/10",
-      },
-      {
-        name: "Kara Yolu Taşımacılık",
-        description: "Türkiye geneli kara yolu lojistik çözümleri.",
-        path: "/kara-yolu-tasimacilik",
-        icon: <Truck size={30} className="text-blue-500" />,
-        iconBackground: "bg-blue-500/10",
-      },
-      {
-        name: "Parça Yük Taşımacılık",
-        description: "Küçük hacimli yükler için hızlı teslimat.",
-        path: "/parca-yuk-tasimacilik",
-        icon: <Boxes size={30} className="text-blue-500" />,
-        iconBackground: "bg-blue-500/10",
-      },
-      {
-        name: "Yedek Parça Taşımacılık",
-        description: "Otomotiv ve makine parçaları için güvenli taşıma.",
-        path: "/yedek-parca-tasimacilik",
-        icon: <Cog size={30} className="text-blue-500" />,
-        iconBackground: "bg-blue-500/10",
-      },
-      {
-        name: "Panelvan Taşımacılık",
-        description: "Şehir içi küçük hacimli hızlı taşımacılık.",
-        path: "/panelvan-tasimacilik",
-        icon: <TruckElectric size={30} className="text-blue-500" />,
-        iconBackground: "bg-blue-500/10",
-      },
-      {
-        name: "Minivan Taşımacılık",
-        description: "Küçük ölçekli ve hızlı teslimatlar.",
-        path: "/minivan-tasimacilik",
-        icon: <Car size={30} className="text-blue-500" />,
-        iconBackground: "bg-blue-500/10",
-      },
-    ],
+    name: "Yorumlar",
+    path: "/yorumlar",
+    type: "link",
   },
-  { name: "Hakkımızda", path: "/hakkimizda", type: "link" },
+  { name: "Hizmetlerimiz", path: "/hizmetlerimiz", type: "link" },
   { name: "Neden Biz?", path: "/neden-biz", type: "link" },
   { name: "İletişim", path: "/iletisim", type: "link" },
 ];
@@ -124,13 +80,13 @@ const NavigationLink = ({
       className={({ isActive }) =>
         `${
           isActive
-            ? `font-semibold text-blue-600 ${
-                isShrink ? "text-lg" : "text-lg md:text-xl md:font-bold"
+            ? `text-yellow-300 ${
+                isShrink ? "text-lg" : "text-lg md:text-xl font-black"
               }`
-            : `text-black ${
-                isShrink ? "text-lg" : "text-lg md:text-xl md:font-bold"
+            : `text-white ${
+                isShrink ? "text-lg" : "text-lg md:text-xl font-black"
               }`
-        } p-3 md:p-0 border-b-2 border-transparent hover:border-blue-500 md:hover:border-transparent md:hover:bg-transparent uppercase`
+        } p-3 md:p-0 border-b-2 border-transparent hover:border-yellow-500 md:hover:border-transparent md:hover:bg-transparent uppercase transition-colors`
       }
     >
       {nav.name}
@@ -157,8 +113,8 @@ const NavigationDropdown = ({
         <HoverCard.Target>
           <div
             className={`text-black ${
-              isShrink ? "text-lg" : "text-lg md:font-bold md:text-xl"
-            } p-3 md:p-0 border-b-2 border-transparent hover:border-blue-500 md:hover:border-transparent md:hover:bg-transparent cursor-pointer uppercase flex items-center gap-1`}
+              isShrink ? "text-lg" : "text-lg md:text-xl"
+            } p-3 md:p-0 border-b-2 border-transparent hover:border-yellow-500 md:hover:border-transparent md:hover:bg-transparent cursor-pointer uppercase flex items-center gap-1`}
           >
             {nav.name} <ChevronDown size={20} className="inline" />
           </div>
@@ -171,8 +127,8 @@ const NavigationDropdown = ({
               className={({ isActive }) =>
                 `${
                   isActive
-                    ? "text-blue-600"
-                    : "text-zinc-600 hover:text-blue-500"
+                    ? "text-yellow-600"
+                    : "text-zinc-600 hover:text-yellow-500"
                 } block p-2`
               }
             >
@@ -183,7 +139,7 @@ const NavigationDropdown = ({
                   {child.icon}
                 </div>
                 <div className="flex-1 flex flex-col">
-                  <p className="font-bold uppercase">{child.name}</p>
+                  <p className="uppercase">{child.name}</p>
                   <p className="line-clamp-2 font-normal opacity-80 leading-tight">
                     {child.description}
                   </p>
@@ -217,8 +173,8 @@ const NavigationDropdown = ({
               className={({ isActive }) =>
                 `${
                   isActive
-                    ? "text-blue-600"
-                    : "text-zinc-600 hover:text-blue-500"
+                    ? "text-yellow-600"
+                    : "text-zinc-600 hover:text-yellow-500"
                 } block p-2`
               }
             >
@@ -229,7 +185,7 @@ const NavigationDropdown = ({
                   {child.icon}
                 </div>
                 <div className="flex-1 flex flex-col">
-                  <p className="font-bold uppercase">{child.name}</p>
+                  <p className="uppercase">{child.name}</p>
                   <p className="line-clamp-2 font-normal opacity-80 leading-tight">
                     {child.description}
                   </p>
@@ -294,8 +250,8 @@ const Navigation = () => {
     <nav
       className={`${
         isShrink
-          ? "h-[80px] bg-white text-zinc-900 border-b border-zinc-950/10 md:shadow-md"
-          : `h-[150px] ${isNavOpen ? "bg-white" : "bg-white/0"}`
+          ? "h-[80px] bg-zinc-800 text-white border-b border-zinc-950/10 md:shadow-md"
+          : `h-[150px] ${isNavOpen ? "bg-zinc-800" : "bg-white/0"}`
       } transition-[background-color,height] duration-200 ease-linear fixed top-0 z-[999] w-screen overflow-hidden flex items-center justify-center text-black`}
     >
       <div className="container flex flex-col md:flex-row md:items-center md:justify-between px-4">
@@ -308,7 +264,7 @@ const Navigation = () => {
           />
           <button
             type="button"
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setIsNavOpen((s) => !s)}
             aria-expanded={isNavOpen}
             aria-controls="primary-navigation"
@@ -318,7 +274,6 @@ const Navigation = () => {
           </button>
         </div>
 
-        {/* Menü artık her zaman DOM'da, sadece state ile aç/kapa */}
         <motion.div
           id="primary-navigation"
           variants={menuVariants}
@@ -335,9 +290,9 @@ const Navigation = () => {
             ${isDesktop ? "w-auto" : "w-screen"}
             ${isDesktop ? "h-auto" : "overflow-y-auto"}
             md:relative md:top-0
-            flex flex-col md:flex-row md:items-center gap-2 md:gap-6
+            flex flex-col md:flex-row md:items-center gap-2 md:gap-12
             md:py-0 py-4 px-6 md:px-0
-            bg-white md:bg-white/0
+            bg-zinc-800 md:bg-white/0
           `}
           style={
             isDesktop

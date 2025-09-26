@@ -8,12 +8,7 @@ import WhyUsPage from "./WhyUs";
 import ContactPage from "./Contact";
 import ScrollToTop from "../utils/ScrollToTop";
 import LogisticsPage from "./Logistics";
-import ParsiyelTasimaDetayPage from "./logistics/ParsiyelTasimaDetayPage";
-import KarayoluTasimaDetayPage from "./logistics/KarayoluTasimaDetayPage";
-import ParcaYukTasimaDetayPage from "./logistics/ParcaYukTasimaDetayPage";
-import YedekParcaTasimaDetayPage from "./logistics/YedekParcaTasimaDetayPage";
-import PanelvanTasimaDetayPage from "./logistics/PanelvanTasimaDetayPage";
-import MinivanTasimaDetayPage from "./logistics/MinivanTasimaDetayPage";
+import TestimonialsPage from "./TestimonialsPage";
 import { ArrowRight, Phone } from "lucide-react";
 
 export function AnimatedRoutes() {
@@ -32,14 +27,12 @@ export function AnimatedRoutes() {
                 <Header
                   title={
                     <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
-                      <span className="text-zinc-950/95">
-                        Yükünüz hafiflesin,{" "}
-                      </span>
+                      <span className="text-white/95">Yükünüz hafiflesin,</span>
                       <motion.span
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-blue-500 via-blue-600 to-sky-600 bg-clip-text text-transparent drop-shadow-sm"
+                        className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-sm"
                       >
                         işiniz hızlansın.
                       </motion.span>
@@ -59,7 +52,7 @@ export function AnimatedRoutes() {
                       <motion.button
                         onClick={() => navigation("/iletisim")}
                         whileHover={{ scale: 1.05 }}
-                        className="group bg-gradient-to-r from-sky-700 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold py-2.5 px-7 rounded-lg text-lg transition-all duration-300 shadow-2xl hover:shadow-sky-400/25"
+                        className="group bg-gradient-to-r from-yellow-700 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 text-white font-semibold py-2.5 px-7 rounded-lg text-lg transition-all duration-300 shadow-2xl hover:shadow-yellow-400/25"
                       >
                         <span className="flex items-center gap-2">
                           İletişime Geç
@@ -100,7 +93,7 @@ export function AnimatedRoutes() {
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-sky-700 to-blue-600 hover:from-sky-400 hover:to-blue-500 bg-clip-text text-transparent drop-shadow-sm"
+                        className="bg-gradient-to-r from-yellow-700 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 bg-clip-text text-transparent drop-shadow-sm"
                       >
                         sizin güveniniz.
                       </motion.span>
@@ -144,7 +137,7 @@ export function AnimatedRoutes() {
                 <Header
                   title={
                     <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
-                      <span className="text-zinc-950/95">
+                      <span className="text-white/95">
                         Neden bizi seçmelisiniz?{" "}
                       </span>
                     </h2>
@@ -159,24 +152,7 @@ export function AnimatedRoutes() {
                         ease: "easeOut",
                       }}
                       className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="group bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-semibold py-2.5 px-7 rounded-lg text-lg transition-all duration-300 shadow-2xl hover:shadow-indigo-400/25"
-                      >
-                        <span className="flex items-center gap-2">
-                          Hizmetlerimizi Keşfedin
-                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </motion.button>
-
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="bg-zinc-950/70 backdrop-blur-md hover:bg-zinc-950/40 text-white font-medium py-2.5 px-7 rounded-lg text-lg transition-all duration-300 border border-zinc-950 hover:border-zinc-950/40"
-                      >
-                        Referanslarımız
-                      </motion.button>
-                    </motion.div>
+                    ></motion.div>
                   }
                   badgeText="Hız, Güven, Şeffaflık"
                   subtitle="Çünkü fark yaratıyoruz."
@@ -196,14 +172,14 @@ export function AnimatedRoutes() {
                 <Header
                   title={
                     <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
-                      <span className="text-zinc-950/95">
+                      <span className="text-white/95">
                         Sorularınız mı var?{" "}
                       </span>
                       <motion.span
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-sky-500 via-blue-600 to-cyan-600 bg-clip-text text-transparent drop-shadow-sm"
+                        className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-sm"
                       >
                         Hemen bize ulaşın.
                       </motion.span>
@@ -222,7 +198,7 @@ export function AnimatedRoutes() {
                     >
                       <motion.button
                         whileHover={{ scale: 1.05 }}
-                        className="group bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-semibold py-2.5 px-7 rounded-lg text-lg transition-all duration-300 shadow-2xl hover:shadow-sky-400/25"
+                        className="group bg-gradient-to-r from-yellow-400 to-yellow-400 hover:from-yellow-300 hover:to-yellow-300 text-white font-semibold py-2.5 px-7 rounded-lg text-lg transition-all duration-300 shadow-2xl hover:shadow-yellow-400/25"
                       >
                         <span className="flex items-center gap-2">
                           <Phone className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -230,12 +206,12 @@ export function AnimatedRoutes() {
                         </span>
                       </motion.button>
 
-                      <motion.button
+                      {/* <motion.button
                         whileHover={{ scale: 1.05 }}
                         className="bg-zinc-950/70 backdrop-blur-md hover:bg-zinc-950/40 text-white font-medium py-2.5 px-7 rounded-lg text-lg transition-all duration-300 border border-zinc-950 hover:border-zinc-950/40"
                       >
                         Mail Gönder
-                      </motion.button>
+                      </motion.button> */}
                     </motion.div>
                   }
                   badgeText="Her Zaman Ulaşılabilir"
@@ -250,7 +226,7 @@ export function AnimatedRoutes() {
             }
           />
           <Route
-            path="/lojistik"
+            path="/hizmetlerimiz"
             element={
               <div>
                 <Header
@@ -260,7 +236,7 @@ export function AnimatedRoutes() {
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-blue-500 via-blue-600 to-sky-600 bg-clip-text text-transparent drop-shadow-sm "
+                        className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-sm "
                       >
                         Genç, Hızlı
                       </motion.span>
@@ -296,7 +272,7 @@ export function AnimatedRoutes() {
             }
           />
           <Route
-            path="/parsiyel-tasimacilik"
+            path="/yorumlar"
             element={
               <div>
                 <Header
@@ -306,9 +282,9 @@ export function AnimatedRoutes() {
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-blue-500 via-blue-600 to-sky-600 bg-clip-text text-transparent drop-shadow-sm "
+                        className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-sm "
                       >
-                        Parsiyel Taşımacılık
+                        Genç, Hızlı
                       </motion.span>
                     </h2>
                   }
@@ -335,233 +311,9 @@ export function AnimatedRoutes() {
                     </motion.div>
                   }
                   minimal={true}
+                  badgeText="Lojistik"
                 />
-                <ParsiyelTasimaDetayPage />
-              </div>
-            }
-          />
-          <Route
-            path="/kara-yolu-tasimacilik"
-            element={
-              <div>
-                <Header
-                  title={
-                    <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
-                      <motion.span
-                        initial={{ opacity: 0, y: 18 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-blue-500 via-blue-600 to-sky-600 bg-clip-text text-transparent drop-shadow-sm "
-                      >
-                        Kara Yolu Taşımacılık
-                      </motion.span>
-                    </h2>
-                  }
-                  button={
-                    <motion.div
-                      initial={{ opacity: 0, y: 28 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.9,
-                        delay: 0.55,
-                        ease: "easeOut",
-                      }}
-                      className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="group transition-all bg-zinc-950/70 backdrop-blur-md hover:bg-zinc-950/40 text-white font-medium py-2.5 px-7 rounded-lg text-lg border border-zinc-950 hover:border-zinc-950/40"
-                      >
-                        <span className="flex items-center gap-2">
-                          İletişime Geç
-                          <Phone className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </motion.button>
-                    </motion.div>
-                  }
-                  minimal={true}
-                />
-                <KarayoluTasimaDetayPage />
-              </div>
-            }
-          />
-          <Route
-            path="/parca-yuk-tasimacilik"
-            element={
-              <div>
-                <Header
-                  title={
-                    <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
-                      <motion.span
-                        initial={{ opacity: 0, y: 18 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-blue-500 via-blue-600 to-sky-600 bg-clip-text text-transparent drop-shadow-sm "
-                      >
-                        Parça Yük Taşımacılık
-                      </motion.span>
-                    </h2>
-                  }
-                  button={
-                    <motion.div
-                      initial={{ opacity: 0, y: 28 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.9,
-                        delay: 0.55,
-                        ease: "easeOut",
-                      }}
-                      className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="group transition-all bg-zinc-950/70 backdrop-blur-md hover:bg-zinc-950/40 text-white font-medium py-2.5 px-7 rounded-lg text-lg border border-zinc-950 hover:border-zinc-950/40"
-                      >
-                        <span className="flex items-center gap-2">
-                          İletişime Geç
-                          <Phone className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </motion.button>
-                    </motion.div>
-                  }
-                  minimal={true}
-                />
-                <ParcaYukTasimaDetayPage />
-              </div>
-            }
-          />
-          <Route
-            path="/yedek-parca-tasimacilik"
-            element={
-              <div>
-                <Header
-                  title={
-                    <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
-                      <motion.span
-                        initial={{ opacity: 0, y: 18 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-blue-500 via-blue-600 to-sky-600 bg-clip-text text-transparent drop-shadow-sm "
-                      >
-                        Yedek Parça Taşımacılık
-                      </motion.span>
-                    </h2>
-                  }
-                  button={
-                    <motion.div
-                      initial={{ opacity: 0, y: 28 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.9,
-                        delay: 0.55,
-                        ease: "easeOut",
-                      }}
-                      className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="group transition-all bg-zinc-950/70 backdrop-blur-md hover:bg-zinc-950/40 text-white font-medium py-2.5 px-7 rounded-lg text-lg border border-zinc-950 hover:border-zinc-950/40"
-                      >
-                        <span className="flex items-center gap-2">
-                          İletişime Geç
-                          <Phone className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </motion.button>
-                    </motion.div>
-                  }
-                  minimal={true}
-                />
-                <YedekParcaTasimaDetayPage />
-              </div>
-            }
-          />
-          <Route
-            path="/panelvan-tasimacilik"
-            element={
-              <div>
-                <Header
-                  title={
-                    <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
-                      <motion.span
-                        initial={{ opacity: 0, y: 18 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-blue-500 via-blue-600 to-sky-600 bg-clip-text text-transparent drop-shadow-sm "
-                      >
-                        Panelvan Taşımacılık
-                      </motion.span>
-                    </h2>
-                  }
-                  button={
-                    <motion.div
-                      initial={{ opacity: 0, y: 28 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.9,
-                        delay: 0.55,
-                        ease: "easeOut",
-                      }}
-                      className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="group transition-all bg-zinc-950/70 backdrop-blur-md hover:bg-zinc-950/40 text-white font-medium py-2.5 px-7 rounded-lg text-lg border border-zinc-950 hover:border-zinc-950/40"
-                      >
-                        <span className="flex items-center gap-2">
-                          İletişime Geç
-                          <Phone className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </motion.button>
-                    </motion.div>
-                  }
-                  minimal={true}
-                />
-                <PanelvanTasimaDetayPage />
-              </div>
-            }
-          />
-          <Route
-            path="/minivan-tasimacilik"
-            element={
-              <div>
-                <Header
-                  title={
-                    <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
-                      <motion.span
-                        initial={{ opacity: 0, y: 18 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-blue-500 via-blue-600 to-sky-600 bg-clip-text text-transparent drop-shadow-sm "
-                      >
-                        Minivan Taşımacılık
-                      </motion.span>
-                    </h2>
-                  }
-                  button={
-                    <motion.div
-                      initial={{ opacity: 0, y: 28 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.9,
-                        delay: 0.55,
-                        ease: "easeOut",
-                      }}
-                      className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        className="group transition-all bg-zinc-950/70 backdrop-blur-md hover:bg-zinc-950/40 text-white font-medium py-2.5 px-7 rounded-lg text-lg border border-zinc-950 hover:border-zinc-950/40"
-                      >
-                        <span className="flex items-center gap-2">
-                          İletişime Geç
-                          <Phone className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </motion.button>
-                    </motion.div>
-                  }
-                  minimal={true}
-                />
-                <MinivanTasimaDetayPage />
+                <TestimonialsPage />
               </div>
             }
           />
